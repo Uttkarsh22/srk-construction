@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree RadheKrishna Construction | Silvassa</title>
+    <style>
+        /* CSS Reset & General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html { scroll-behavior: smooth; }
+
+        :root {
+            --primary-orange: #ff6600; 
+            --dark-black: #1a1a1a;
+            --light-gray: #f4f4f4;
+            --text-gray: #444444;
+        }
+        body {
+            line-height: 1.6;
+            color: var(--text-gray);
+            background-color: #ffffff;
+        }
+        h1, h2, h3 { color: var(--dark-black); }
+        
+        header {
+            background-color: var(--dark-black);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .logo span { color: var(--primary-orange); }
+        
+        .lang-selector select {
+            background-color: #333;
+            color: white;
+            border: 1px solid var(--primary-orange);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+
+        #banner {
+            background: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('https://images.unsplash.com/photo-1504307651254-35680f356f12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            padding: 6rem 5%;
+            text-align: center;
+            color: white;
+        }
+        #banner h1 {
+            color: var(--primary-orange);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        #banner h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .about-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+            border-top: 4px solid var(--primary-orange);
+        }
+        .about-box p {
+            color: #eeeeee;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .quote-btn {
+            display: inline-block;
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 12px 30px;
+            margin-top: 1rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .quote-btn:hover {
+            background-color: #cc5200;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--primary-orange);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        #services { background-color: var(--light-gray); max-width: 100%; }
+        .services-container { max-width: 1200px; margin: auto; }
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        .service-item {
+            background: white;
+            padding: 1.5rem;
+            border-left: 5px solid var(--primary-orange);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            font-weight: bold;
+            color: var(--dark-black);
+        }
+        .service-footer {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-orange);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .photo-placeholder {
+            background-color: #e0e0e0;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-weight: bold;
+            border: 2px dashed #bbb;
+            border-radius: 4px;
+        }
+
+        #contact { background-color: var(--dark-black); color: white; max-width: 100%; }
+        #contact h2 { color: white; }
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: auto;
+            align-items: start;
+        }
+        @media (max-width: 768px) { .contact-container { grid-template-columns: 1fr; } }
+        .contact-card, .contact-form {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 5px solid var(--primary-orange);
+            text-align: left;
+        }
+        .contact-card p { color: #dddddd; font-size: 1.1rem; margin-bottom: 1rem; }
+        .contact-card strong { color: var(--primary-orange); }
+        .availability {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .whatsapp-link {
+            color: #25D366; 
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s, text-decoration 0.3s;
+        }
+        .whatsapp-link:hover {
+            color: #1ebe57; 
+            text-decoration: underline;
+        }
+
+        .contact-form h3 { color: white; margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: #dddddd; font-size: 0.9rem; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 10px; border: 1px solid #444; border-radius: 4px; background: #1a1a1a; color: white; font-family: inherit;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--primary-orange); }
+        .submit-btn {
+            background-color: var(--primary-orange); color: white; border: none; padding: 12px 20px; font-size: 1.1rem;
+            border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; transition: background 0.3s;
+        }
+        .submit-btn:hover { background-color: #cc5200; }
+        footer { background-color: #111111; color: #777; text-align: center; padding: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo" data-i18n="logo">SRK <span>Construction</span></div>
+            <div class="lang-selector">
+                <select id="languageSelect" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी (Hindi)</option>
+                    <option value="gu">ગુજરાતી (Gujarati)</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <div id="banner">
+        <h1 data-i18n="banner_title">Shree RadheKrishna Construction</h1>
+        <h3 data-i18n="banner_subtitle">Building Trust with Quality Work</h3>
+        <div class="about-box">
+            <p data-i18n="about_p1">We are a Silvassa-based construction company specializing in civil, industrial, and infrastructure projects. We deliver reliable, cost-effective, and timely construction solutions.</p>
+            <p data-i18n="about_p2">With a focus on quality and commitment, we aim to build long-term relationships with our clients.</p>
+            <a href="#contact" class="quote-btn" data-i18n="btn_quote">Get Free Quote</a>
+        </div>
+    </div>
+
+    <section id="services">
+        <div class="services-container">
+            <h2 data-i18n="services_title">Our Services</h2>
+            <div class="service-list">
+                <div class="service-item" data-i18n="srv_1">🏗️ Industrial Shed Construction</div>
+                <div class="service-item" data-i18n="srv_2">🧱 RCC (Reinforced Cement Concrete) Work</div>
+                <div class="service-item" data-i18n="srv_3">👷 Labour Contract Services</div>
+                <div class="service-item" data-i18n="srv_4">🚧 Boundary Wall Construction</div>
+                <div class="service-item" data-i18n="srv_5">🛣️ Road & Drainage Work</div>
+                <div class="service-item" data-i18n="srv_6">🏢 Government & Private Projects</div>
+            </div>
+            <p class="service-footer" data-i18n="services_footer">We ensure quality workmanship, timely completion, and competitive pricing.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 data-i18n="projects_title">Our Projects</h2>
+        <p data-i18n="projects_p1">We have experience in handling various construction works including industrial, residential, and infrastructure projects.</p>
+        <div class="photo-grid">
+            <div class="photo-placeholder" data-i18n="photo_placeholder">[Add Photo of Site/Work Here]</div>
+            <div class="photo-placeholder" data-i18n="photo_placeholder">[Add Photo of Site/Work Here]</div>
+            <div class="photo-placeholder" data-i18n="photo_placeholder">[Add Photo of Site/Work Here]</div>
+        </div>
+        <p><strong data-i18n="projects_p2">Our team is committed to delivering strong and durable structures with high standards.</strong></p>
+    </section>
+
+    <section id="contact">
+        <h2 data-i18n="contact_title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-card">
+                <p><strong data-i18n="loc_label">📍 Location:</strong><br> 
+                <span data-i18n="loc_address">Office No: 149, Centre Point<br>Opposite Pipariya Police Station<br>Silvassa-Vapi Main Road<br>Silvassa - 396230, Dadra & Nagar Haveli</span></p>
+                <br>
+                <p><strong data-i18n="phone_label">📞 Phone:</strong><br> <a href="tel:+918733017951" style="color: #dddddd; text-decoration: none;">8733017951</a>, <a href="tel:+919328264854" style="color: #dddddd; text-decoration: none;">9328264854</a></p>
+                <p><strong data-i18n="wa_label">💬 WhatsApp:</strong><br> <a href="https://wa.me/918733017951" target="_blank" class="whatsapp-link">8733017951</a></p>
+                <div class="availability">
+                    <p data-i18n="availability_text">We are available for subcontracting, labour contracts, and civil construction work.</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3 data-i18n="form_title">Request an Inquiry</h3>
+                <form action="https://formspree.io/f/mdapggpj" method="POST">
+                    <div class="form-group">
+                        <label for="name" data-i18n="form_name">Your Name / Company Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-i18n="form_phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="form_email">Email Address (Optional)</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="service" data-i18n="form_service">Service Required</label>
+                        <select id="service" name="service">
+                            <option value="industrial" data-i18n="opt_1">Industrial Shed Construction</option>
+                            <option value="rcc" data-i18n="opt_2">RCC Work</option>
+                            <option value="labour" data-i18n="opt_3">Labour Contract</option>
+                            <option value="civil" data-i18n="opt_4">Boundary, Road & Drainage</option>
+                            <option value="other" data-i18n="opt_5">Other Civil Work</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="form_msg">Project Details</label>
+                        <textarea id="message" name="message" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" data-i18n="form_btn">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Shree RadheKrishna Construction. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            "en": {
+                "logo": "SRK <span>Construction</span>",
+                "banner_title": "Shree RadheKrishna Construction",
+                "banner_subtitle": "Building Trust with Quality Work",
+                "about_p1": "We are a Silvassa-based construction company specializing in civil, industrial, and infrastructure projects. We deliver reliable, cost-effective, and timely construction solutions.",
+                "about_p2": "With a focus on quality and commitment, we aim to build long-term relationships with our clients.",
+                "btn_quote": "Get Free Quote",
+                "services_title": "Our Services",
+                "srv_1": "🏗️ Industrial Shed Construction",
+                "srv_2": "🧱 RCC (Reinforced Cement Concrete) Work",
+                "srv_3": "👷 Labour Contract Services",
+                "srv_4": "🚧 Boundary Wall Construction",
+                "srv_5": "🛣️ Road & Drainage Work",
+                "srv_6": "🏢 Government & Private Projects",
+                "services_footer": "We ensure quality workmanship, timely completion, and competitive pricing.",
+                "projects_title": "Our Projects",
+                "projects_p1": "We have experience in handling various construction works including industrial, residential, and infrastructure projects.",
+                "photo_placeholder": "[Add Photo of Site/Work Here]",
+                "projects_p2": "Our team is committed to delivering strong and durable structures with high standards.",
+                "contact_title": "Contact Us",
+                "loc_label": "📍 Location:",
+                "loc_address": "Office No: 149, Centre Point<br>Opposite Pipariya Police Station<br>Silvassa-Vapi Main Road<br>Silvassa - 396230, Dadra & Nagar Haveli",
+                "phone_label": "📞 Phone:",
+                "wa_label": "💬 WhatsApp:",
+                "availability_text": "We are available for subcontracting, labour contracts, and civil construction work.",
+                "form_title": "Request an Inquiry",
+                "form_name": "Your Name / Company Name",
+                "form_phone": "Phone Number",
+                "form_email": "Email Address (Optional)",
+                "form_service": "Service Required",
+                "opt_1": "Industrial Shed Construction",
+                "opt_2": "RCC Work",
+                "opt_3": "Labour Contract",
+                "opt_4": "Boundary, Road & Drainage",
+                "opt_5": "Other Civil Work",
+                "form_msg": "Project Details",
+                "form_btn": "Send Inquiry"
+            },
+            "hi": {
+                "logo": "SRK <span>कंस्ट्रक्शन</span>",
+                "banner_title": "श्री राधेकृष्णा कंस्ट्रक्शन",
+                "banner_subtitle": "गुणवत्तापूर्ण काम के साथ विश्वास का निर्माण",
+                "about_p1": "हम सिलवासा स्थित एक निर्माण कंपनी हैं जो सिविल, औद्योगिक और बुनियादी ढांचा परियोजनाओं में विशेषज्ञता रखती है।",
+                "about_p2": "गुणवत्ता और प्रतिबद्धता पर ध्यान देने के साथ, हमारा उद्देश्य अपने ग्राहकों के साथ दीर्घकालिक संबंध बनाना है।",
+                "btn_quote": "मुफ़्त कोटेशन प्राप्त करें",
+                "services_title": "हमारी सेवाएँ",
+                "srv_1": "🏗️ औद्योगिक शेड निर्माण",
+                "srv_2": "🧱 आरसीसी कार्य",
+                "srv_3": "👷 लेबर कॉन्ट्रैक्ट सेवाएँ",
+                "srv_4": "🚧 बाउंड्री वॉल निर्माण",
+                "srv_5": "🛣️ सड़क और जल निकासी कार्य",
+                "srv_6": "🏢 सरकारी और निजी परियोजनाएं",
+                "services_footer": "हम गुणवत्तापूर्ण कारीगरी, समय पर काम और प्रतिस्पर्धी मूल्य सुनिश्चित करते हैं।",
+                "projects_title": "हमारे प्रोजेक्ट्स",
+                "projects_p1": "हमारे पास औद्योगिक, आवासीय और बुनियादी ढांचा परियोजनाओं का अनुभव है।",
+                "photo_placeholder": "[यहाँ कार्य/साइट का फोटो जोड़ें]",
+                "projects_p2": "हमारी टीम उच्च मानकों के साथ मजबूत संरचनाएं प्रदान करने के लिए प्रतिबद्ध है।",
+                "contact_title": "संपर्क करें",
+                "loc_label": "📍 स्थान:",
+                "loc_address": "कार्यालय संख्या: 149, सेंटर पॉइंट<br>पिपरिया पुलिस स्टेशन के सामने<br>सिलवासा-वापी मेन रोड<br>सिलवासा - 396230, दादरा और नगर हवेली",
+                "phone_label": "📞 फ़ोन:",
+                "wa_label": "💬 व्हाट्सएप:",
+                "availability_text": "हम सब-कॉन्ट्रैक्टिंग, लेबर कॉन्ट्रैक्ट और सिविल निर्माण कार्य के लिए उपलब्ध हैं।",
+                "form_title": "पूछताछ करें",
+                "form_name": "आपका नाम / कंपनी का नाम",
+                "form_phone": "फ़ोन नंबर",
+                "form_email": "ईमेल पता (वैकल्पिक)",
+                "form_service": "आवश्यक सेवा",
+                "opt_1": "औद्योगिक शेड निर्माण",
+                "opt_2": "आरसीसी कार्य",
+                "opt_3": "लेबर कॉन्ट्रैक्ट",
+                "opt_4": "बाउंड्री, सड़क और जल निकासी",
+                "opt_5": "अन्य सिविल कार्य",
+                "form_msg": "प्रोजेक्ट का विवरण",
+                "form_btn": "पूछताछ भेजें"
+            },
+            "gu": {
+                "logo": "SRK <span>કન્સ્ટ્રક્શન</span>",
+                "banner_title": "શ્રી રાધેકૃષ્ણા કન્સ્ટ્રક્શન",
+                "banner_subtitle": "ગુણવત્તાયુક્ત કામ સાથે વિશ્વાસનું નિર્માણ",
+                "about_p1": "અમે સેલવાસ સ્થિત એક કન્સ્ટ્રક્શન કંપની છીએ જે સિવિલ, ઔદ્યોગિક અને ઇન્ફ્રાસ્ટ્રક્ચર પ્રોજેક્ટ્સમાં નિષ્ણાત છે.",
+                "about_p2": "ગુણવત્તા અને પ્રતિબદ્ધતા પર ધ્યાન કેન્દ્રિત કરીને, અમારું લક્ષ્ય ગ્રાહકો સાથે લાંબા ગાળાના સંબંધો બાંધવાનું છે.",
+                "btn_quote": "મફત અવતરણ મેળવો",
+                "services_title": "અમારી સેવાઓ",
+                "srv_1": "🏗️ ઔદ્યોગિક શેડનું નિર્માણ",
+                "srv_2": "🧱 આરસીસી કામ",
+                "srv_3": "👷 લેબર કોન્ટ્રાક્ટ સેવાઓ",
+                "srv_4": "🚧 બાઉન્ડ્રી વોલ કન્સ્ટ્રક્શન",
+                "srv_5": "🛣️ રોડ અને ડ્રેનેજ કામ",
+                "srv_6": "🏢 સરકારી અને ખાનગી પ્રોજેક્ટ્સ",
+                "services_footer": "અમે ગુણવત્તાયુક્ત કારીગરી, સમયસર પૂર્ણતા અને સ્પર્ધાત્મક કિંમતની ખાતરી કરીએ છીએ.",
+                "projects_title": "અમારા પ્રોજેક્ટ્સ",
+                "projects_p1": "અમારી પાસે ઔદ્યોગિક, રહેણાંક અને ઇન્ફ્રાસ્ટ્રક્ચર પ્રોજેક્ટ્સ સંભાળવાનો અનુભવ છે.",
+                "photo_placeholder": "[અહીં સાઇટ/કાર્યનો ફોટો ઉમેરો]",
+                "projects_p2": "અમારી ટીમ ઉચ્ચ ધોરણો સાથે મજબૂત માળખાં પ્રદાન કરવા માટે પ્રતિબદ્ધ છે.",
+                "contact_title": "અમારો સંપર્ક કરો",
+                "loc_label": "📍 સ્થાન:",
+                "loc_address": "ઓફિસ નં: 149, સેન્ટર પોઈન્ટ<br>પીપરિયા પોલીસ સ્ટેશનની સામે<br>સેલવાસ-વાપી મેઈન રોડ<br>સેલવાસ - 396230, દાદરા અને નગર હવેલી",
+                "phone_label": "📞 ફોન:",
+                "wa_label": "💬 વોટ્સએપ:",
+                "availability_text": "અમે પેટા-કોન્ટ્રાક્ટિંગ, લેબર કોન્ટ્રાક્ટ અને સિવિલ કન્સ્ટ્રક્શન કામ માટે ઉપલબ્ધ છીએ.",
+                "form_title": "પૂછપરછની વિનંતી કરો",
+                "form_name": "તમારું નામ / કંપનીનું નામ",
+                "form_phone": "ફોન નંબર",
+                "form_email": "ઈમેલ સરનામું (વૈકલ્પિક)",
+                "form_service": "આવશ્યક સેવા",
+                "opt_1": "ઔદ્યોગિક શેડનું નિર્માણ",
+                "opt_2": "આરસીસી કામ",
+                "opt_3": "લેબર કોન્ટ્રાક્ટ",
+                "opt_4": "બાઉન્ડ્રી, રોડ અને ડ્રેનેજ",
+                "opt_5": "અન્ય સિવિલ કામ",
+                "form_msg": "પ્રોજેક્ટ વિગતો",
+                "form_btn": "પૂછપરછ મોકલો"
+            }
+        };
+
+        function changeLanguage() {
+            const lang = document.getElementById("languageSelect").value;
+            const elements = document.querySelectorAll("[data-i18n]");
+            elements.forEach(element => {
+                const key = element.getAttribute("data-i18n");
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
