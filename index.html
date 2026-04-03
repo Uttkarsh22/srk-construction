@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shree RadheKrjjishnaa Construction | Silvassu</title>
+    <title>Shree RadheKrishna Construction | Silvassa</title>
     <style>
         /* CSS Reset & General Styles */
         * {
@@ -149,22 +149,23 @@
             color: var(--primary-orange);
         }
 
+        /* Updated Image Gallery CSS */
         .photo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            gap: 1.5rem;
             margin: 2rem 0;
         }
-        .photo-placeholder {
-            background-color: #e0e0e0;
+        .project-photo {
+            width: 100%;
             height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-weight: bold;
-            border: 2px dashed #bbb;
-            border-radius: 4px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .project-photo:hover {
+            transform: scale(1.03);
         }
 
         #contact { background-color: var(--dark-black); color: white; max-width: 100%; }
@@ -264,11 +265,13 @@
     <section id="projects">
         <h2 data-i18n="projects_title">Our Projects</h2>
         <p data-i18n="projects_p1">We have experience in handling various construction works including industrial, residential, and infrastructure projects.</p>
+        
         <div class="photo-grid">
-            <div class="photo-placeholder" data-i18n="photo_placeholder">[Add Photo of Site/Work Here]</div>
-            <div class="photo-placeholder" data-i18n="photo_placeholder">[Add Photo of Site/Work Here]</div>
-            <div class="photo-placeholder" data-i18n="photo_placeholder">[Add Photo of Site/Work Here]</div>
+            <img src="project1.jpg" alt="Industrial Construction Work" class="project-photo">
+            <img src="project2.png" alt="RCC Construction Work" class="project-photo">
+            <img src="project3.jpg" alt="Civil Construction Work" class="project-photo">
         </div>
+
         <p><strong data-i18n="projects_p2">Our team is committed to delivering strong and durable structures with high standards.</strong></p>
     </section>
 
@@ -343,7 +346,6 @@
                 "services_footer": "We ensure quality workmanship, timely completion, and competitive pricing.",
                 "projects_title": "Our Projects",
                 "projects_p1": "We have experience in handling various construction works including industrial, residential, and infrastructure projects.",
-                "photo_placeholder": "[Add Photo of Site/Work Here]",
                 "projects_p2": "Our team is committed to delivering strong and durable structures with high standards.",
                 "contact_title": "Contact Us",
                 "loc_label": "📍 Location:",
@@ -381,7 +383,6 @@
                 "services_footer": "हम गुणवत्तापूर्ण कारीगरी, समय पर काम और प्रतिस्पर्धी मूल्य सुनिश्चित करते हैं।",
                 "projects_title": "हमारे प्रोजेक्ट्स",
                 "projects_p1": "हमारे पास औद्योगिक, आवासीय और बुनियादी ढांचा परियोजनाओं का अनुभव है।",
-                "photo_placeholder": "[यहाँ कार्य/साइट का फोटो जोड़ें]",
                 "projects_p2": "हमारी टीम उच्च मानकों के साथ मजबूत संरचनाएं प्रदान करने के लिए प्रतिबद्ध है।",
                 "contact_title": "संपर्क करें",
                 "loc_label": "📍 स्थान:",
@@ -419,7 +420,6 @@
                 "services_footer": "અમે ગુણવત્તાયુક્ત કારીગરી, સમયસર પૂર્ણતા અને સ્પર્ધાત્મક કિંમતની ખાતરી કરીએ છીએ.",
                 "projects_title": "અમારા પ્રોજેક્ટ્સ",
                 "projects_p1": "અમારી પાસે ઔદ્યોગિક, રહેણાંક અને ઇન્ફ્રાસ્ટ્રક્ચર પ્રોજેક્ટ્સ સંભાળવાનો અનુભવ છે.",
-                "photo_placeholder": "[અહીં સાઇટ/કાર્યનો ફોટો ઉમેરો]",
                 "projects_p2": "અમારી ટીમ ઉચ્ચ ધોરણો સાથે મજબૂત માળખાં પ્રદાન કરવા માટે પ્રતિબદ્ધ છે.",
                 "contact_title": "અમારો સંપર્ક કરો",
                 "loc_label": "📍 સ્થાન:",
